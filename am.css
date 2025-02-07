@@ -275,11 +275,10 @@ ul {
 
 @media (max-width: 768px) {
     .hidden-text {
-        display: none !important; /* Force la mise en cache du texte caché sur mobile */
-    }
-
-    .decal {
-        margin-left: 0;
-        padding: 0 10px;
+        visibility: hidden !important; /* Cache le texte sans le supprimer */
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease-in-out;
     }
 }
+

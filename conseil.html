@@ -89,14 +89,18 @@
     </main>
 
     <script>
-        function toggleText() {
-            var text = document.getElementById("hiddenText");
-            if (text.classList.contains("visible-text")) {
-                text.classList.remove("visible-text");
-            } else {
-                text.classList.add("visible-text");
-            }
-        }
+   function toggleText() {
+    var text = document.getElementById("hiddenText");
+
+    if (text.style.visibility === "visible") {
+        text.style.visibility = "hidden";
+        text.style.height = "0";
+    } else {
+        text.style.visibility = "visible";
+        text.style.height = "auto";
+    }
+}
+
     </script>
 
     <footer>
