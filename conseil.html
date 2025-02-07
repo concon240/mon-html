@@ -5,14 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rêves d'Ailleurs - Conseil</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="am.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-</head>
+    <style>
+        /* Style pour le texte cliquable */
+        .clickable-text {
+            color: #007BFF;
+            text-decoration: underline;
+            cursor: pointer;
+        }
 
+        .clickable-text:hover {
+            color: #0056b3;
+        }
+
+        /* Style du texte à afficher/masquer */
+        .hidden-text {
+            visibility: hidden; /* Texte caché initialement */
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #333;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border-left: 4px solid #007BFF;
+        }
+
+        /* S'assurer que le texte est visible lors de l'affichage */
+        .visible-text {
+            visibility: visible !important;
+        }
+
+        /* Responsiveness pour mobiles */
+        @media (max-width: 768px) {
+            .hidden-text {
+                visibility: hidden !important;
+            }
+        }
+    </style>
+</head>
+<style>
+    .decal {
+      margin-left: 2%;
+    }
+  </style>
 <body>
 
-     <!-- Header -->
-     <header>
+    <header>
         <a href="index.html"><img class="logo" src="logo.webp" alt="Logo"></a>
         <nav>
             <ul>
@@ -20,18 +58,7 @@
                 <li class="dropdown">
                     <a href="blog.html" class="dropbtn">Blog</a>
                     <ul class="dropdown-content">
-                        <li class="dropdown">
-                            <a href="amsterdam.html" class="dropbtn">Amsterdam</a>
-                            <ul class="dropdown-content">
-                                <!-- Sous-chapitres pour Amsterdam -->
-                                <li><a href="#">Musées</a></li>
-                                <li><a href="#">Canaux et Croisières</a></li>
-                                <li><a href="#">Quartiers et Ambiance</a></li>
-                                <li><a href="#">Espaces Verts</a></li>
-                                <li><a href="#">Marchés et Shopping</a></li>
-                                <li><a href="#">Expériences Insolites</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="amsterdam.html" class="dropbtn">Amsterdam</a></li>
                         <li><a href="ny.html">New York</a></li>
                         <li><a href="paris.html">Paris</a></li>
                     </ul>
@@ -43,8 +70,35 @@
         </nav>
     </header>
 
+    <main>
+        <h1 style="text-align: center;"><u>Histoire sur les Pays-Bas</u></h1>
+        <br><br>
 
-    <!-- FOOTER -->
+        <section class="decal">
+            <h3 class="clickable-text" onclick="toggleText()">
+                <i id="arrow" class="fa fa-level-down arrow"></i> <span>Se déplacer à vélo, pas cher (Amsterdam et autres villes)</span>
+            </h3>
+            <div id="hiddenText" class="hidden-text">
+                <p>Téléchargez l'application <strong> Donkey Republic</strong></p>
+                <ul>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.donkeyrepublic.bike.android&pcampaignid=web_share"><strong>Sur Android</strong></a></li>
+                    <li><a href="https://apps.apple.com/us/app/donkey-republic/id933526449"><strong>Sur Iphone</strong></a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleText() {
+            var text = document.getElementById("hiddenText");
+            if (text.classList.contains("visible-text")) {
+                text.classList.remove("visible-text");
+            } else {
+                text.classList.add("visible-text");
+            }
+        }
+    </script>
+
     <footer>
         <div class="footer-container">
             <div class="footer-about">
@@ -74,6 +128,7 @@
             <p>&copy; 2025 Rêves d'Ailleurs - Tous droits réservés</p>
         </div>
     </footer>
+
 </body>
 
 </html>

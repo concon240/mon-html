@@ -239,6 +239,30 @@ footer {
     color: #f1c40f;
 }
 
+
+/* ... other styles ... */
+
+.clickable-text {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+.clickable-text span {
+    color: black !important; /* Texte en noir */
+    text-decoration: none !important; /* Supprime le soulignement */
+    border-bottom: none !important; /* Supprime toute bordure éventuelle */
+}
+
+/* ... rest of your CSS ... */
+
+.clickable-text i {
+    color: black !important; /* Force la couleur noire */
+}
+
+ul {
+    margin-left: 2%;
+}
+
 /* ============================= */
 /* 📱 RESPONSIVE DESIGN */
 /* ============================= */
@@ -248,13 +272,14 @@ footer {
     }
 }
 
+
 @media (max-width: 768px) {
-    .image-box {
-        width: 90%;
+    .hidden-text {
+        display: none !important; /* Force la mise en cache du texte caché sur mobile */
     }
 
-    .form-container {
-        height: auto;
-        padding: 50px 20px;
+    .decal {
+        margin-left: 0;
+        padding: 0 10px;
     }
 }
