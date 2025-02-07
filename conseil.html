@@ -91,7 +91,14 @@
     <script>
 function toggleText() {
     var text = document.getElementById("hiddenText");
-    text.classList.toggle("visible-text");
+
+    if (text.style.height === "0px" || text.style.height === "") {
+        text.style.height = text.scrollHeight + "px";
+        text.style.padding = "10px"; // Ajoute du padding au déploiement
+    } else {
+        text.style.height = "0px";
+        text.style.padding = "0"; // Supprime le padding pour éviter un espace vide
+    }
 }
 
     </script>

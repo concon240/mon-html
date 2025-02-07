@@ -266,6 +266,18 @@ ul {
 /* ============================= */
 /* 📱 RESPONSIVE DESIGN */
 /* ============================= */
+.hidden-text {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out, padding 0.3s ease-in-out;
+    padding: 0; /* Évite un espace vide */
+}
+
+.visible-text {
+    height: auto;
+    padding: 10px; /* Rétablit le padding une fois affiché */
+}
+
 @media (max-width: 1024px) {
     .image-box {
         width: 45%;
@@ -274,15 +286,8 @@ ul {
 
 @media (max-width: 768px) {
     .hidden-text {
-        max-height: 0;
+        height: 0;
         overflow: hidden;
-        transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out;
-        padding: 0; /* Enlève le padding pour éviter un espace vide */
-    }
-
-    .hidden-text.visible-text {
-        max-height: 500px; /* Une valeur assez grande pour afficher le contenu */
-        padding: 10px; /* Rétablit le padding quand le texte est visible */
+        padding: 0;
     }
 }
-
