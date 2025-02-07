@@ -272,13 +272,17 @@ ul {
     }
 }
 
-
 @media (max-width: 768px) {
     .hidden-text {
-        visibility: hidden !important; /* Cache le texte sans le supprimer */
-        height: 0;
+        max-height: 0;
         overflow: hidden;
-        transition: height 0.3s ease-in-out;
+        transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out;
+        padding: 0; /* Enlève le padding pour éviter un espace vide */
+    }
+
+    .hidden-text.visible-text {
+        max-height: 500px; /* Une valeur assez grande pour afficher le contenu */
+        padding: 10px; /* Rétablit le padding quand le texte est visible */
     }
 }
 

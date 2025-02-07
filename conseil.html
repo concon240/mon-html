@@ -89,16 +89,9 @@
     </main>
 
     <script>
-   function toggleText() {
+function toggleText() {
     var text = document.getElementById("hiddenText");
-
-    if (text.style.visibility === "visible") {
-        text.style.visibility = "hidden";
-        text.style.height = "0";
-    } else {
-        text.style.visibility = "visible";
-        text.style.height = "auto";
-    }
+    text.classList.toggle("visible-text");
 }
 
     </script>
