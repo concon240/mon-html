@@ -1,2 +1,2 @@
-#!/bin/sh
-git push origin master
+#!/bin/bash
+echo "Hook post-commit exécuté !"
