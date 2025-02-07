@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rêves d'Ailleurs - Blog</title>
+    <link rel="stylesheet" href="am.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <style>
+        /* Style pour le texte cliquable */
+        .clickable-text {
+            color: #007BFF;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .clickable-text:hover {
+            color: #0056b3;
+        }
+
+        /* Style du texte à afficher/masquer */
+        .hidden-text {
+            display: none;
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #333;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border-left: 4px solid #007BFF;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="index.html"><img class="logo" src="logo.webp" alt="Logo"></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li class="dropdown">
+                    <a href="blog.html" class="dropbtn">Blog</a>
+                    <ul class="dropdown-content">
+                        <li class="dropdown">
+                            <a href="amsterdam.html" class="dropbtn">Amsterdam</a>
+                            <ul class="dropdown-content">
+                                <!-- Sous-chapitres pour Amsterdam -->
+                                <li><a href="#">Musées</a></li>
+                                <li><a href="#">Canaux et Croisières</a></li>
+                                <li><a href="#">Quartiers et Ambiance</a></li>
+                                <li><a href="#">Espaces Verts</a></li>
+                                <li><a href="#">Marchés et Shopping</a></li>
+                                <li><a href="#">Expériences Insolites</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="ny.html">New York</a></li>
+                        <li><a href="paris.html">Paris</a></li>
+                    </ul>
+                </li>
+                <li><a href="histoire.html">Histoire</a></li>
+                <li><a href="conseil.html">Conseil</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main><br>
+
+        <h1 style="text-align: center;"><u>Histoire sur les Pays-Bas</u></h1>
+        <br><br>
+        <style>
+            .decal {
+              margin-left: 2%;
+            }
+          </style>
+        <section class="decal">
+            <!-- Texte cliquable -->
+            <h3 style="text-decoration: none; color: black;" class="clickable-text" onclick="toggleText()">
+                <i id="arrow" class="fa fa-level-down arrow"></i> Pourquoi dit-on souvent "Hollande" pour parler des Pays-Bas ?
+            </h3>
+            <!-- Texte caché au départ -->
+            <p id="hiddenText" class="hidden-text">
+                Du <strong>16ᵉ au 17ᵉ siècle</strong>, la <u>Hollande</u> était la province la plus puissante des Provinces-Unies, dominait le commerce mondial grâce à ses ports comme Amsterdam et Rotterdam. <br>
+                À partir de cette époque, son nom a été utilisé à tort pour désigner l'ensemble des Pays-Bas, un usage qui a perduré jusqu'au 19ᵉ siècle.
+            </p>
+        </section>
+
+    </main><br>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>À propos</h3>
+                <p>Passionné de voyages, nous partageons nos découvertes, conseils et inspirations pour explorer le
+                    monde autrement.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Liens utiles</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="conseil.html">Conseils</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="a-propos.html">À propos</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Suivez-nous</h3>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Rêves d'Ailleurs - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script>
+        // Fonction JavaScript pour afficher ou cacher le texte au clic
+        function toggleText() {
+            var text = document.getElementById("hiddenText");
+            // Toggle l'affichage du texte caché
+            if (text.style.display === "block") {
+                text.style.display = "none";
+            } else {
+                text.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
