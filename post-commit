@@ -1,2 +1,0 @@
-#!/bin/bash
-echo "Hook post-commit exécuté !"
