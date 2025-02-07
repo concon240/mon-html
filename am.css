@@ -267,27 +267,13 @@ ul {
 /* 📱 RESPONSIVE DESIGN */
 /* ============================= */
 .hidden-text {
-    height: 0;
+    max-height: 0; /* Caché par défaut */
     overflow: hidden;
-    transition: height 0.5s ease-in-out, padding 0.3s ease-in-out;
-    padding: 0; /* Évite un espace vide */
+    transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out;
+    padding: 0;
 }
 
 .visible-text {
-    height: auto;
-    padding: 10px; /* Rétablit le padding une fois affiché */
-}
-
-@media (max-width: 1024px) {
-    .image-box {
-        width: 45%;
-    }
-}
-
-@media (max-width: 768px) {
-    .hidden-text {
-        height: 0;
-        overflow: hidden;
-        padding: 0;
-    }
+    max-height: 500px; /* Une valeur assez grande pour tout afficher */
+    padding: 10px; /* Ajoute du padding lors de l'affichage */
 }
