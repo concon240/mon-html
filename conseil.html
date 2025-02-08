@@ -6,95 +6,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rêves d'Ailleurs - Conseil</title>
     <link rel="stylesheet" href="am.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 </head>
 
-<body>
+<!-- Header -->
+<header>
+    <a href="index.html"><img class="logo" src="logo.webp" alt="Logo"></a>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li class="dropdown">
+                <a href="blog.html" class="dropbtn">Blog</a>
+                <ul class="dropdown-content">
+                    <li><a href="amsterdam.html" class="dropbtn">Amsterdam</a></li>
+                    <li><a href="ny.html">New York</a></li>
+                    <li><a href="paris.html">Paris</a></li>
+                </ul>
+            </li>
+            <li><a href="histoire.html">Histoire</a></li>
+            <li><a href="conseil.html">Bons plans</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <header>
-        <a href="index.html"><img class="logo" src="logo.webp" alt="Logo"></a>
-        <nav>
+<main>
+    <details>
+        <summary class="bg">
+            <span>Qu'est-ce que le HTML ?</span>
+            <i class="fa fa-chevron-down"></i>
+        </summary>
+        <p>Le HTML (HyperText Markup Language) est un langage de balisage utilisé pour structurer les pages web.</p>
+    </details>
+    <br><br>
+    <details>
+        <summary class="bg">
+            <span>Comment apprendre la programmation ?</span>
+            <i class="fa fa-chevron-down"></i>
+        </summary>
+        <p>Pour apprendre la programmation, il est conseillé de commencer par étudier les langages de base tels que HTML,
+            CSS et JavaScript, avant de se spécialiser dans des langages plus avancés comme PHP, Ruby ou Python.</p>
+    </details>
+</main>
+
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-about">
+            <h3>À propos</h3>
+            <p>Passionné de voyages, nous partageons nos découvertes, conseils et inspirations pour explorer le
+                monde autrement.</p>
+        </div>
+        <div class="footer-links">
+            <h3>Liens utiles</h3>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li class="dropdown">
-                    <a href="blog.html" class="dropbtn">Blog</a>
-                    <ul class="dropdown-content">
-                        <li><a href="amsterdam.html">Amsterdam</a></li>
-                        <li><a href="ny.html">New York</a></li>
-                        <li><a href="paris.html">Paris</a></li>
-                    </ul>
-                </li>
-                <li><a href="histoire.html">Histoire</a></li>
-                <li><a href="conseil.html">Bon plans</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="conseil.html">Conseils</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
             </ul>
-        </nav>
-    </header>
-
-    <main>
-        <h1 style="text-align: center;"><u>Histoire sur les Pays-Bas</u></h1>
-        <br><br>
-
-        <section class="decal">
-            <h3 class="clickable-text" onclick="toggleText()">
-                <i id="arrow" class="fa fa-chevron-down arrow"></i> Se déplacer à vélo, pas cher (Amsterdam et autres villes)
-            </h3>
-            <div id="hiddenText" class="hidden-text">
-                <p>Téléchargez l'application <strong>Donkey Republic</strong></p>
-                <ul>
-                    <li><a href="https://play.google.com/store/apps/details?id=com.donkeyrepublic.bike.android" target="_blank"><strong>Sur Android</strong></a></li>
-                    <li><a href="https://apps.apple.com/us/app/donkey-republic/id933526449" target="_blank"><strong>Sur iPhone</strong></a></li>
-                </ul>
-            </div>
-        </section>
-    </main>
-
-    <script>
-        function toggleText() {
-            var text = document.getElementById("hiddenText");
-            var arrow = document.getElementById("arrow");
-
-            if (text.classList.contains("visible-text")) {
-                text.classList.remove("visible-text");
-                arrow.classList.remove("fa-chevron-up");
-                arrow.classList.add("fa-chevron-down");
-            } else {
-                text.classList.add("visible-text");
-                arrow.classList.remove("fa-chevron-down");
-                arrow.classList.add("fa-chevron-up");
-            }
-        }
-    </script>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-about">
-                <h3>À propos</h3>
-                <p>Passionné de voyages, nous partageons nos découvertes, conseils et inspirations pour explorer le
-                    monde autrement.</p>
-            </div>
-            <div class="footer-links">
-                <h3>Liens utiles</h3>
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="conseil.html">Conseils</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="a-propos.html">À propos</a></li>
-                </ul>
-            </div>
-            <div class="footer-social">
-                <h3>Suivez-nous</h3>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Rêves d'Ailleurs - Tous droits réservés</p>
+        <div class="footer-social">
+            <h3>Suivez-nous</h3>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
-    </footer>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Rêves d'Ailleurs - Tous droits réservés</p>
+    </div>
+</footer>
 
 </body>
 
