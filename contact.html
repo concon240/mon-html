@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rêves d'Ailleurs - Contact</title>
+    <title>Contact - Rêves d'Ailleurs</title>
     <link rel="stylesheet" href="contact.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 
 <body>
@@ -17,104 +16,37 @@
     <nav>
         <ul>
             <li><a href="index.html">Accueil</a></li>
-            <li class="dropdown">
-                <a href="blog.html" class="dropbtn">Blog</a>
-                <ul class="dropdown-content">
-                    <li><a href="amsterdam.html" class="dropbtn">Amsterdam</a></li>
-                    <li><a href="ny.html">New York</a></li>
-                    <li><a href="paris.html">Paris</a></li>
-                </ul>
-            </li>
-            <li><a href="histoire.html">Histoire</a></li>
-            <li><a href="conseil.html">Bons plans</a></li>
+            <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 </header>
 
+<!-- Formulaire de contact -->
+<div class="form-container">
 
-    <!-- Formulaire de contact -->
-    <div class="form-container">
-        <form class="form" id="contactForm" action="https://formspree.io/f/xpwqlyjo" method="POST">
-            <h2>Contactez-nous</h2>
+    <!-- Intégration du Google Form -->
+    <iframe src="https://forms.gle/PbEgwP7EUDunp2gG6" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
+</div>
 
-            <div class="input-group">
-                <input type="text" id="name" name="name" class="input" required>
-                <label for="name">Nom</label>
-            </div>
-
-            <div class="input-group">
-                <input type="email" id="email" name="email" class="input" required>
-                <label for="email">Email</label>
-            </div>
-
-            <div class="input-group">
-                <textarea id="message" name="message" class="input" required></textarea>
-                <label for="message">Votre message</label>
-            </div>
-
-            <button type="submit" class="fancy">Envoyer</button>
-            <p class="success-message" id="successMessage"></p>
-        </form>
-    </div>
-
-    <script>
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Empêche l'envoi du formulaire par défaut
-    
-            const formData = new FormData(event.target);
-    
-            fetch(event.target.action, {
-                method: "POST",
-                body: formData
-            })
-            .then(response => {
-                if (response.ok) {
-                    document.getElementById("successMessage").textContent = "Merci ! Votre message a été envoyé.";
-                    document.getElementById("contactForm").reset(); // Réinitialise le formulaire
-                } else {
-                    document.getElementById("successMessage").textContent = "Oups ! Il y a eu un problème. Essayez de nouveau.";
-                }
-            })
-            .catch(() => {
-                document.getElementById("successMessage").textContent = "Oups ! Il y a eu un problème. Essayez de nouveau.";
-            });
-        });
-    </script>
-
-</body>
-
-<!-- FOOTER -->
-
+<!-- Footer -->
 <footer>
     <div class="footer-container">
         <div class="footer-about">
             <h3>À propos</h3>
-            <p>Passionné de voyages, nous partageons nos découvertes, conseils et inspirations pour explorer le
-                monde autrement.</p>
+            <p>Partagez vos découvertes et conseils pour explorer le monde autrement.</p>
         </div>
         <div class="footer-links">
             <h3>Liens utiles</h3>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="conseil.html">Bon plans</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="a-propos.html">À propos</a></li>
             </ul>
         </div>
-        <div class="footer-social">
-            <h3>Suivez-nous</h3>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2025 Rêves d'Ailleurs - Tous droits réservés</p>
     </div>
 </footer>
 
+</body>
 
 </html>
