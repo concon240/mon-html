@@ -24,256 +24,172 @@ header {
     width: 50px;
 }
 
-/* Style général du menu */
+/* ============================= */
+/* 🔽 MENU DE NAVIGATION */
+/* ============================= */
 nav ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     display: flex;
+    gap: 20px;
 }
 
-nav li {
+nav ul li {
     position: relative;
 }
 
 nav a {
-    display: block;
-    padding: 10px 20px;
     text-decoration: none;
     color: #333;
+    font-weight: bold;
+    padding: 10px;
 }
 
-
-/* Style pour les menus déroulants */
-.dropdown {
-    position: relative;
-    display: inline-block;
+nav a:hover {
+    color: #007BFF;
 }
 
+/* Sous-menu déroulant */
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+    z-index: 10;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-.dropdown-content a {
+.dropdown-content li {
+    padding: 10px;
+}
+
+.dropdown-content li a {
+    color: #000;
+    font-weight: normal;
+}
+
+.dropdown-content li a:hover {
+    color: #007BFF;
+}
+
+/* ============================= */
+/* 📌 Texte cliquable avec flèche */
+/* ============================= */
+.clickable-text {
     color: black;
-    padding: 12px 16px;
     text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #a6a6a4;
-}
-
-/* Style pour les sous-chapitres */
-.dropdown .dropdown-content .dropdown-content {
-    left: 100%;
-    top: 0;
-    display: none;
-}
-
-.dropdown-content li:hover .dropdown-content {
-    display: block;
-}
-
-
-/* ============================= */
-/* 🏞️ IMAGE DE FOND PRINCIPALE */
-/* ============================= */
-section.top-page {
-    background: url("banniere1.webp") no-repeat center center;
-    height: calc(80vh - 100px);
-    background-size: cover;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.slogan-container {
-    text-align: center;
-}
-
-.slogan {
-    font-size: 60px;
-    text-decoration: underline;
-    margin-bottom: 20px;
-    color: white;
-}
-
-/* ============================= */
-/* 🎯 BOUTON CTA */
-/* ============================= */
-.cta-button {
-    background-color: white;
-    color: black;
-    border-radius: 50px;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 1em 2em;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    border: 1px solid black;
-    box-shadow: 0 0 0 0 black;
-}
-
-.cta-button:hover {
-    transform: translateY(-4px) translateX(-2px);
-    box-shadow: 2px 5px 0 0 black;
-}
-
-.cta-button:active {
-    transform: translateY(2px) translateX(1px);
-    box-shadow: 0 0 0 0 black;
-}
-
-/* ============================= */
-/* CATEGORIES */
-/* ============================= */
-
-.container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* 3 colonnes pour la première ligne */
-    grid-template-rows: auto auto;
-    /* Deux lignes */
-    gap: 10px;
-    /* Espacement entre les blocs */
-    width: 80%;
-    margin: auto;
-}
-
-.box {
-    padding: 20px;
-    text-align: center;
-    color: white;
-    font-size: 18px;
     font-weight: bold;
-    border-radius: 15px;
-    /* Bords arrondis */
-}
-
-/* Couleurs */
-.red {
-    background-color: #6C6C71;
-}
-
-.blue {
-    background-color: #6C6C71;
-}
-
-.green {
-    background-color: #6C6C71;
-}
-
-.yellow {
-    background-color: #6C6C71;
-}
-
-.purple {
-    background-color: #6C6C71;
-}
-
-.orange {
-    background-color: #6C6C71;
-}
-
-.decalam {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* 3 colonnes pour la première ligne */
-    grid-template-rows: auto auto;
-    /* Deux lignes */
+    display: flex;
+    align-items: center;
     gap: 10px;
-    /* Espacement entre les blocs */
-    width: 80%;
-    margin: auto;
+    font-size: 1.2rem;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.clickable-text:hover {
+    color: #0056b3;
+}
+
+/* Icône de flèche */
+.arrow {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Quand le texte est affiché, tourner la flèche */
+.visible-text + .clickable-text .arrow {
+    transform: rotate(180deg);
+}
+
+/* Texte caché */
+.hidden-text {
+    display: none;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+    padding: 15px;
+    background-color: #f8f8f8;
+    border-left: 4px solid #007BFF;
+    border-radius: 5px;
+}
+
+/* Classe pour afficher le texte */
+.visible-text {
+    display: block !important;
 }
 
 /* ============================= */
-/* 🔻 FOOTER */
+/* 📱 RESPONSIVE DESIGN */
+/* ============================= */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hidden-text {
+        display: none !important;
+    }
+
+    .clickable-text {
+        font-size: 1rem;
+    }
+}
+
+/* ============================= */
+/* 🦶 FOOTER */
 /* ============================= */
 footer {
     background-color: #333;
     color: white;
-    padding: 40px 0;
     text-align: center;
+    padding: 20px;
+    margin-top: 20px;
 }
 
 .footer-container {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 20px;
+    padding: 20px;
 }
 
-.footer-container div {
-    width: 30%;
+.footer-about,
+.footer-links,
+.footer-social {
+    flex: 1;
     min-width: 250px;
     margin-bottom: 20px;
 }
 
 .footer-links ul {
-    list-style: none;
-    padding: 0;
+    list-style-type: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
 }
 
 .footer-links a {
     color: white;
     text-decoration: none;
-    transition: color 0.3s;
 }
 
 .footer-links a:hover {
-    color: #f1c40f;
+    text-decoration: underline;
 }
 
-
-/* ... other styles ... */
-
-.clickable-text {
-    text-decoration: none !important;
-    border-bottom: none !important;
+.footer-social a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
 }
 
-.clickable-text span {
-    color: black !important; /* Texte en noir */
-    text-decoration: none !important; /* Supprime le soulignement */
-    border-bottom: none !important; /* Supprime toute bordure éventuelle */
-}
-
-/* ... rest of your CSS ... */
-
-.clickable-text i {
-    color: black !important; /* Force la couleur noire */
-}
-
-ul {
-    margin-left: 2%;
-}
-
-/* ============================= */
-/* 📱 RESPONSIVE DESIGN */
-/* ============================= */
-.hidden-text {
-    max-height: 0; /* Caché par défaut */
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out;
-    padding: 0;
-}
-
-.visible-text {
-    max-height: 500px; /* Une valeur assez grande pour tout afficher */
-    padding: 10px; /* Ajoute du padding lors de l'affichage */
+.footer-bottom {
+    margin-top: 10px;
+    font-size: 0.9rem;
 }

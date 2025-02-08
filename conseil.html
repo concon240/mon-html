@@ -7,47 +7,8 @@
     <title>Rêves d'Ailleurs - Conseil</title>
     <link rel="stylesheet" href="am.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <style>
-        /* Style pour le texte cliquable */
-        .clickable-text {
-            color: #007BFF;
-            text-decoration: underline;
-            cursor: pointer;
-        }
-
-        .clickable-text:hover {
-            color: #0056b3;
-        }
-
-        /* Style du texte à afficher/masquer */
-        .hidden-text {
-            visibility: hidden; /* Texte caché initialement */
-            margin-top: 10px;
-            font-size: 1rem;
-            color: #333;
-            padding: 10px;
-            background-color: #f8f8f8;
-            border-left: 4px solid #007BFF;
-        }
-
-        /* S'assurer que le texte est visible lors de l'affichage */
-        .visible-text {
-            visibility: visible !important;
-        }
-
-        /* Responsiveness pour mobiles */
-        @media (max-width: 768px) {
-            .hidden-text {
-                visibility: hidden !important;
-            }
-        }
-    </style>
 </head>
-<style>
-    .decal {
-      margin-left: 2%;
-    }
-  </style>
+
 <body>
 
     <header>
@@ -58,7 +19,7 @@
                 <li class="dropdown">
                     <a href="blog.html" class="dropbtn">Blog</a>
                     <ul class="dropdown-content">
-                        <li><a href="amsterdam.html" class="dropbtn">Amsterdam</a></li>
+                        <li><a href="amsterdam.html">Amsterdam</a></li>
                         <li><a href="ny.html">New York</a></li>
                         <li><a href="paris.html">Paris</a></li>
                     </ul>
@@ -76,29 +37,33 @@
 
         <section class="decal">
             <h3 class="clickable-text" onclick="toggleText()">
-                <i id="arrow" class="fa fa-level-down arrow"></i> <span>Se déplacer à vélo, pas cher (Amsterdam et autres villes)</span>
+                <i id="arrow" class="fa fa-chevron-down arrow"></i> Se déplacer à vélo, pas cher (Amsterdam et autres villes)
             </h3>
             <div id="hiddenText" class="hidden-text">
-                <p>Téléchargez l'application <strong> Donkey Republic</strong></p>
+                <p>Téléchargez l'application <strong>Donkey Republic</strong></p>
                 <ul>
-                    <li><a href="https://play.google.com/store/apps/details?id=com.donkeyrepublic.bike.android&pcampaignid=web_share"><strong>Sur Android</strong></a></li>
-                    <li><a href="https://apps.apple.com/us/app/donkey-republic/id933526449"><strong>Sur Iphone</strong></a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.donkeyrepublic.bike.android" target="_blank"><strong>Sur Android</strong></a></li>
+                    <li><a href="https://apps.apple.com/us/app/donkey-republic/id933526449" target="_blank"><strong>Sur iPhone</strong></a></li>
                 </ul>
             </div>
         </section>
     </main>
 
     <script>
-function toggleText() {
-    var text = document.getElementById("hiddenText");
+        function toggleText() {
+            var text = document.getElementById("hiddenText");
+            var arrow = document.getElementById("arrow");
 
-    if (text.classList.contains("visible-text")) {
-        text.classList.remove("visible-text");
-    } else {
-        text.classList.add("visible-text");
-    }
-}
-
+            if (text.classList.contains("visible-text")) {
+                text.classList.remove("visible-text");
+                arrow.classList.remove("fa-chevron-up");
+                arrow.classList.add("fa-chevron-down");
+            } else {
+                text.classList.add("visible-text");
+                arrow.classList.remove("fa-chevron-down");
+                arrow.classList.add("fa-chevron-up");
+            }
+        }
     </script>
 
     <footer>
