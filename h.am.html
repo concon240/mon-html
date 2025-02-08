@@ -11,53 +11,42 @@
 
 <body>
 
-    <!-- Header -->
-    <header>
-        <a href="index.html"><img class="logo" src="logo.webp" alt="Logo"></a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li class="dropdown">
-                    <a href="blog.html" class="dropbtn">Blog</a>
-                    <ul class="dropdown-content">
-                        <li class="dropdown">
-                            <a href="amsterdam.html" class="dropbtn">Amsterdam</a>
-                            <ul class="dropdown-content">
-                                <li><a href="#">Musées</a></li>
-                                <li><a href="#">Canaux et Croisières</a></li>
-                                <li><a href="#">Quartiers et Ambiance</a></li>
-                                <li><a href="#">Espaces Verts</a></li>
-                                <li><a href="#">Marchés et Shopping</a></li>
-                                <li><a href="#">Expériences Insolites</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="ny.html">New York</a></li>
-                        <li><a href="paris.html">Paris</a></li>
-                    </ul>
-                </li>
-                <li><a href="histoire.html">Histoire</a></li>
-                <li><a href="conseil.html">Bons plans</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+<!-- Header -->
+<header>
+    <a href="index.html"><img class="logo" src="logo.webp" alt="Logo"></a>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li class="dropdown">
+                <a href="blog.html" class="dropbtn">Blog</a>
+                <ul class="dropdown-content">
+                    <li><a href="amsterdam.html" class="dropbtn">Amsterdam</a></li>
+                    <li><a href="ny.html">New York</a></li>
+                    <li><a href="paris.html">Paris</a></li>
+                </ul>
+            </li>
+            <li><a href="histoire.html">Histoire</a></li>
+            <li><a href="conseil.html">Bons plans</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
     </header>
 
-    <main><br>
-
-        <h1 style="text-align: center;"><u>Histoire sur les Pays-Bas</u></h1>
+    <main><br>        
+         <h1 style="text-align: center;"><u>Histoire sur les Pays-Bas</u></h1>
         <br><br>
-
-        <section class="decal">
-            <!-- Texte cliquable -->
-            <h3 class="clickable-text" onclick="toggleText()">
-                <i id="arrow" class="fa fa-chevron-down arrow"></i> Pourquoi dit-on souvent "Hollande" pour parler des Pays-Bas ?
-            </h3>
-            <!-- Texte caché au départ -->
-            <p id="hiddenText" class="hidden-text">
-                Du <strong>16ᵉ au 17ᵉ siècle</strong>, la <u>Hollande</u> était la province la plus puissante des Provinces-Unies, dominait le commerce mondial grâce à ses ports comme Amsterdam et Rotterdam. <br>
-                À partir de cette époque, son nom a été utilisé à tort pour désigner l'ensemble des Pays-Bas, un usage qui a perduré jusqu'au 19ᵉ siècle.
-            </p>
-        </section>
+        <main>
+            <details>
+                <summary class="bg">
+                    <span><strong>Se déplacer à vélo, pas cher (Amsterdam et autres villes)</strong></span>
+                    <i class="fa fa-chevron-down"></i>
+                </summary>
+                <p>Du <strong>16ᵉ au 17ᵉ siècle</strong>, la <u>Hollande</u> était la province la plus puissante des Provinces-Unies, dominait le commerce mondial grâce à ses ports comme Amsterdam et Rotterdam. <br>
+                    À partir de cette époque, son nom a été utilisé à tort pour désigner l'ensemble des Pays-Bas, un usage qui a perduré jusqu'au 19ᵉ siècle.
+                </p>
+            </details>
+        </main>
 
     </main><br>
 

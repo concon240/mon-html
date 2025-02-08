@@ -1,4 +1,6 @@
+/* ============================= */
 /* 🌍 Réinitialisation globale */
+/* ============================= */
 * {
     font-family: Montserrat, sans-serif;
     margin: 0;
@@ -70,91 +72,68 @@ nav a:hover {
     color: #000;
 }
 
-/* 📩 FORMULAIRE DE CONTACT */
-.form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh;
-    width: 100%;
-    background: #f5f1ee; /* Fond doux */
-    padding: 40px 20px;
-}
+/* ============================= */
+/*  BOX */
+/* ============================= */
 
-.form {
-    background: #e5d8cf; /* Beige clair pour s’accorder au header */
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    width: 350px;
-    text-align: center;
-}
-
-/* 📝 Champs de saisie */
-.input-group {
+/* ============================= */
+/* 📦 CONTAINER */
+/* ============================= */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+    grid-template-rows: auto auto; /* 2 lignes */
+    gap: 20px; /* Espacement entre les blocs */
+    width: 80%;
+    margin: auto;
     position: relative;
-    margin-bottom: 20px;
+    grid-template-areas: 
+        "box1 box2 box3"
+        "box4 box5 box6"; /* 2 lignes avec 3 boîtes chacune */
 }
 
-.input {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #c8b6a3;
-    border-radius: 5px;
-    font-size: 1rem;
-    outline: none;
-    background: white;
-    transition: border-color 0.3s ease;
-}
-
-.input:focus {
-    border-color: #8c6f5f; /* Marron doux */
-    box-shadow: 0 0 8px rgba(140, 111, 95, 0.4);
-}
-
-/* ✨ Labels flottants */
-.input-group label {
-    position: absolute;
-    left: 12px;
-    top: 14px;
-    font-size: 1rem;
-    color: #777;
-    transition: 0.3s ease;
-}
-
-.input:focus + label,
-.input:valid + label {
-    top: -10px;
-    font-size: 0.8rem;
-    color: #8c6f5f;
-    font-weight: bold;
-}
-
-/* 🎨 Bouton */
-.fancy {
-    width: 100%;
-    background: #5a3e2b; /* Marron foncé */
+/* Style des boîtes */
+.box {
+    padding: 30px;
+    text-align: center;
     color: white;
-    border: none;
-    padding: 12px;
-    font-size: 1rem;
+    font-size: 18px;
     font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
+    border-radius: 15px; /* Bords arrondis */
 }
 
-.fancy:hover {
-    background: #3e2a1e;
+/* Définir chaque boîte dans sa zone de la grille */
+.box:nth-child(1) { 
+    grid-area: box1;
+    background-color: #6C746C;
 }
 
-/* ✅ Message de succès */
-.success-message {
-    margin-top: 15px;
-    font-size: 1rem;
-    color: #5a3e2b;
-    display: none;
+.box:nth-child(2) { 
+    grid-area: box2;
+    background-color: #6C746C;
 }
+
+.box:nth-child(3) { 
+    grid-area: box3;
+    background-color: #6C746C;
+}
+
+.box:nth-child(4) { 
+    grid-area: box4;
+    background-color: #6C746C;
+}
+
+.box:nth-child(5) { 
+    grid-area: box5;
+    background-color: #6C746C;
+}
+
+.box:nth-child(6) { 
+    grid-area: box6;
+    background-color: #6C746C;
+}
+
+
 
 /* ============================= */
 /* 🔻 FOOTER */
@@ -259,3 +238,4 @@ footer {
         padding: 8px;
     }
 }
+

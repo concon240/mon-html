@@ -200,22 +200,66 @@ footer {
 }
 
 /* ============================= */
-/* 📱 RESPONSIVE DESIGN */
+/* 📱 MEDIA QUERIES */
 /* ============================= */
-@media (max-width: 1024px) {
-    .image-box {
-        width: 45%;
+
+/* 🌟 Tablettes (max 1024px) */
+@media screen and (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav a {
+        padding: 10px;
+    }
+
+    .bg {
+        font-size: 0.9rem;
+        padding: 3% 5%;
     }
 }
 
-@media (max-width: 768px) {
-    .image-box {
-        width: 90%;
+/* 📱 Mobiles (max 768px) */
+@media screen and (max-width: 768px) {
+    .bg {
+        font-size: 0.85rem;
+        padding: 4% 5%;
     }
 
-    .form-container {
-        height: auto;
-        padding: 50px 20px;
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-about,
+    .footer-links,
+    .footer-social {
+        min-width: 100%;
+    }
+}
+
+/* 📱 Très petits écrans (max 480px) */
+@media screen and (max-width: 480px) {
+    .bg {
+        font-size: 0.8rem;
+        padding: 5% 5%;
+    }
+
+    .logo {
+        max-width: 80px; /* Logo plus petit */
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 8px;
     }
 }
 
