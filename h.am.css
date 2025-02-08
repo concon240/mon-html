@@ -73,20 +73,14 @@ nav a:hover {
 }
 
 /* ============================= */
-/*  BOX */
-/* ============================= */
-
-/* ============================= */
 /* 📦 CONTAINER */
 /* ============================= */
 .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
-    grid-template-rows: auto auto; /* 2 lignes */
     gap: 20px; /* Espacement entre les blocs */
     width: 80%;
     margin: auto;
-    position: relative;
     grid-template-areas: 
         "box1 box2 box3"
         "box4 box5 box6"; /* 2 lignes avec 3 boîtes chacune */
@@ -102,37 +96,12 @@ nav a:hover {
     border-radius: 15px; /* Bords arrondis */
 }
 
-/* Définir chaque boîte dans sa zone de la grille */
-.box:nth-child(1) { 
-    grid-area: box1;
-    background-color: #6C746C;
-}
-
-.box:nth-child(2) { 
-    grid-area: box2;
-    background-color: #6C746C;
-}
-
-.box:nth-child(3) { 
-    grid-area: box3;
-    background-color: #6C746C;
-}
-
-.box:nth-child(4) { 
-    grid-area: box4;
-    background-color: #6C746C;
-}
-
-.box:nth-child(5) { 
-    grid-area: box5;
-    background-color: #6C746C;
-}
-
-.box:nth-child(6) { 
-    grid-area: box6;
-    background-color: #6C746C;
-}
-
+.box:nth-child(1) { background-color: #6C746C; }
+.box:nth-child(2) { background-color: #6C746C; }
+.box:nth-child(3) { background-color: #6C746C; }
+.box:nth-child(4) { background-color: #6C746C; }
+.box:nth-child(5) { background-color: #6C746C; }
+.box:nth-child(6) { background-color: #6C746C; }
 
 /* ============================= */
 /* 🔻 FOOTER */
@@ -180,7 +149,6 @@ footer {
 
 /* 🌟 Tablettes (max 1024px) */
 @media screen and (max-width: 1024px) {
-    /* Réduire la taille des boîtes */
     .container {
         grid-template-columns: repeat(2, 1fr); /* 2 colonnes pour les tablettes */
         grid-template-areas: 
@@ -188,29 +156,12 @@ footer {
             "box3 box4"
             "box5 box6"; /* Réorganiser les boîtes sur 2 colonnes */
     }
-
-    header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    nav ul {
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-    }
-
-    nav a {
-        padding: 10px;
-    }
 }
 
 /* 📱 Mobiles (max 768px) */
 @media screen and (max-width: 768px) {
-    /* Réorganiser les boîtes en une seule colonne */
     .container {
-        grid-template-columns: 1fr; /* 1 seule colonne pour les petits écrans */
+        grid-template-columns: 1fr; /* 1 colonne pour les petits écrans */
         grid-template-areas: 
             "box1"
             "box2"
@@ -219,55 +170,16 @@ footer {
             "box5"
             "box6"; /* Chaque boîte prend toute la largeur */
     }
-
-    header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    nav ul {
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-about,
-    .footer-links,
-    .footer-social {
-        min-width: 100%;
-    }
 }
 
 /* 📱 Très petits écrans (max 480px) */
 @media screen and (max-width: 480px) {
-    /* Ajuster la taille du texte et des espaces */
-    .bg {
-        font-size: 0.8rem;
-        padding: 5% 5%;
-    }
-
-    .logo {
-        max-width: 80px; /* Logo plus petit */
-    }
-
-    nav a {
-        font-size: 0.9rem;
-        padding: 8px;
-    }
-
     .container {
-        /* Ajuster les boîtes pour les très petits écrans */
-        gap: 10px; /* Espacement plus petit entre les boîtes */
+        gap: 10px; /* Réduire l'espace entre les boîtes */
     }
 
     .box {
-        font-size: 16px; /* Réduire la taille du texte dans les boîtes */
-        padding: 20px; /* Réduire les marges internes */
+        font-size: 14px; /* Réduire la taille de la police pour les petits écrans */
+        padding: 15px; /* Réduire le padding pour les petits écrans */
     }
 }
