@@ -49,7 +49,7 @@ nav a {
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
@@ -74,50 +74,45 @@ nav a:hover {
 
 
 /* ============================= */
-/* 💪 TYPE FAQ  */
+/* 💪 FAQ - Ajustement des espacements */
 /* ============================= */
 
+/* Style des blocs FAQ */
+details {
+    margin-top: 5px;
+    margin-bottom: 5px; /* Moins d'espace entre les questions fermées */
+    transition: margin 0.3s ease-in-out; /* Animation fluide */
+}
+
+/* Style du bloc question */
 .bg {
     background-color: rgb(238, 234, 234);
-    height: 40px; /* Légère augmentation pour plus d'espace */
-    margin-right: 5%;
     margin-left: 5%;
-    padding: 0 15px; /* Ajoute du padding pour éviter que le texte touche les bords */
+    padding: 12px 20px;
+    width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    text-align: left; /* Alignement correct du texte */
     cursor: pointer;
-    gap: 10px; /* Espace entre le texte et l'icône */
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: margin 0.3s ease-in-out; /* Effet fluide */
 }
 
-/* Ajustement de la taille de l'icône */
-.bg i {
-    transition: transform 0.3s;
-    font-size: 1.2em; /* Ajuste la taille de l'icône si nécessaire */
+/* Augmenter l'espace quand une question est ouverte */
+details[open] {
+    margin-bottom: 15px; /* Plus d'espace entre les questions ouvertes */
 }
 
-
-/* Rotation de la flèche lors de l'affichage du texte */
-details[open] .bg i {
-    transform: rotate(180deg); /* Rotation de la flèche quand le <details> est ouvert */
-}
-
-/* Pour la structure du texte caché et visible */
+/* Ajustement du contenu affiché */
 details p {
-    margin: 10px 0;
+    margin-left: 6%;
+    font-size: 1rem;
+    line-height: 1.5;
 }
-
-/* Optionnel : ajouter un peu d'espacement entre les éléments <details> */
-details {
-    margin-bottom: 15px;
-}
-
-
-
 
 /* ============================= */
-/* 🦶 FOOTER */
+/* 🦶 FOOTER - RESPONSIVE */
 /* ============================= */
 footer {
     background-color: #333;
@@ -168,4 +163,68 @@ footer {
 .footer-bottom {
     margin-top: 10px;
     font-size: 0.9rem;
+}
+
+/* ============================= */
+/* 📱 MEDIA QUERIES */
+/* ============================= */
+
+/* 🌟 Tablettes (max 1024px) */
+@media screen and (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav a {
+        padding: 10px;
+    }
+
+    .bg {
+        font-size: 0.9rem;
+        padding: 3% 5%;
+    }
+}
+
+/* 📱 Mobiles (max 768px) */
+@media screen and (max-width: 768px) {
+    .bg {
+        font-size: 0.85rem;
+        padding: 4% 5%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-about,
+    .footer-links,
+    .footer-social {
+        min-width: 100%;
+    }
+}
+
+/* 📱 Très petits écrans (max 480px) */
+@media screen and (max-width: 480px) {
+    .bg {
+        font-size: 0.8rem;
+        padding: 5% 5%;
+    }
+
+    .logo {
+        max-width: 80px; /* Logo plus petit */
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
 }
