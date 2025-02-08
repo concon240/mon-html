@@ -35,7 +35,7 @@
 
     <!-- Formulaire de contact -->
     <div class="form-container">
-        <form class="form" id="contactForm" action="send_mail.php" method="POST">
+        <form class="form" id="contactForm" action="https://formspree.io/f/xpwqlyjo" method="POST">
             <h2>Contactez-nous</h2>
 
             <div class="input-group">
@@ -58,8 +58,29 @@
         </form>
     </div>
 
-
-    <script src="contact.js"></script>
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Empêche l'envoi du formulaire par défaut
+    
+            const formData = new FormData(event.target);
+    
+            fetch(event.target.action, {
+                method: "POST",
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById("successMessage").textContent = "Merci ! Votre message a été envoyé.";
+                    document.getElementById("contactForm").reset(); // Réinitialise le formulaire
+                } else {
+                    document.getElementById("successMessage").textContent = "Oups ! Il y a eu un problème. Essayez de nouveau.";
+                }
+            })
+            .catch(() => {
+                document.getElementById("successMessage").textContent = "Oups ! Il y a eu un problème. Essayez de nouveau.";
+            });
+        });
+    </script>
 
 </body>
 
