@@ -183,3 +183,251 @@ footer {
         padding: 15px; /* Réduire le padding pour les petits écrans */
     }
 }
+/* ============================= */
+/* 🌍 Réinitialisation globale */
+/* ============================= */
+* {
+    font-family: Montserrat, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================= */
+/* 🌟 HEADER */
+/* ============================= */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #d7cdc5;
+    padding: 10px 20px;
+    flex-wrap: wrap; /* Permet au contenu de se déplacer si nécessaire */
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+}
+
+/* Style général du menu */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Espacement entre les liens */
+}
+
+nav li {
+    position: relative;
+}
+
+nav a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Style du menu déroulant */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content li {
+    width: 100%;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+}
+
+/* Afficher le menu déroulant au survol */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Style du lien actif */
+nav a:hover {
+    background-color: #ddd;
+    color: #000;
+}
+
+/* ============================= */
+/* 📦 CONTAINER */
+/* ============================= */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales sur les grands écrans */
+    gap: 20px; /* Espacement entre les blocs */
+    width: 80%;
+    margin: auto;
+    grid-template-areas: 
+        "box1 box2 box3"
+        "box4 box5 box6"; /* 2 lignes avec 3 boîtes chacune */
+}
+
+/* Style des boîtes */
+.box {
+    padding: 30px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 15px; /* Bords arrondis */
+}
+
+.box:nth-child(1) { background-color: #6C746C; }
+.box:nth-child(2) { background-color: #6C746C; }
+.box:nth-child(3) { background-color: #6C746C; }
+.box:nth-child(4) { background-color: #6C746C; }
+.box:nth-child(5) { background-color: #6C746C; }
+.box:nth-child(6) { background-color: #6C746C; }
+
+
+/* ============================= */
+/* 🔻 FOOTER */
+/* ============================= */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.footer-container div {
+    width: 30%;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #f1c40f;
+}
+
+/* ============================= */
+/* 📱 MEDIA QUERIES - Grilles Responsive */
+/* ============================= */
+
+/* 🌟 Tablettes (max 1024px) */
+@media screen and (max-width: 1024px) {
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav a {
+        padding: 10px;
+    }
+
+    .bg {
+        font-size: 0.9rem;
+        padding: 3% 5%;
+    }
+
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur les tablettes */
+        grid-template-areas: 
+            "box1 box2"
+            "box3 box4"
+            "box5 box6"; /* Organiser les boîtes en 2 colonnes */
+    }
+
+    .box {
+        padding: 20px; /* Ajuster le padding pour plus de place */
+        font-size: 16px; /* Réduire la taille du texte */
+    }
+}
+
+/* 📱 Mobiles (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .bg {
+        font-size: 0.85rem;
+        padding: 4% 5%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-about,
+    .footer-links,
+    .footer-social {
+        min-width: 100%;
+    }
+    .container {
+        grid-template-columns: 1fr; /* 1 colonne pour les petits écrans */
+        grid-template-areas: 
+            "box1"
+            "box2"
+            "box3"
+            "box4"
+            "box5"
+            "box6"; /* Chaque boîte prend toute la largeur */
+    }
+
+    .box {
+        padding: 15px; /* Réduire le padding pour les petits écrans */
+        font-size: 14px; /* Réduire la taille du texte */
+    }
+}
+
+/* 📱 Très petits écrans (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .bg {
+        font-size: 0.8rem;
+        padding: 5% 5%;
+    }
+
+    .logo {
+        max-width: 80px; /* Logo plus petit */
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+    .container {
+        gap: 10px; /* Réduire l'espace entre les boîtes */
+    }
+
+    .box {
+        padding: 12px; /* Réduire encore le padding */
+        font-size: 12px; /* Réduire la taille du texte pour les très petits écrans */
+    }
+}
