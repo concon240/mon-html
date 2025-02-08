@@ -134,7 +134,6 @@ nav a:hover {
 }
 
 
-
 /* ============================= */
 /* 🔻 FOOTER */
 /* ============================= */
@@ -181,6 +180,15 @@ footer {
 
 /* 🌟 Tablettes (max 1024px) */
 @media screen and (max-width: 1024px) {
+    /* Réduire la taille des boîtes */
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes pour les tablettes */
+        grid-template-areas: 
+            "box1 box2"
+            "box3 box4"
+            "box5 box6"; /* Réorganiser les boîtes sur 2 colonnes */
+    }
+
     header {
         flex-direction: column;
         align-items: center;
@@ -196,18 +204,32 @@ footer {
     nav a {
         padding: 10px;
     }
-
-    .bg {
-        font-size: 0.9rem;
-        padding: 3% 5%;
-    }
 }
 
 /* 📱 Mobiles (max 768px) */
 @media screen and (max-width: 768px) {
-    .bg {
-        font-size: 0.85rem;
-        padding: 4% 5%;
+    /* Réorganiser les boîtes en une seule colonne */
+    .container {
+        grid-template-columns: 1fr; /* 1 seule colonne pour les petits écrans */
+        grid-template-areas: 
+            "box1"
+            "box2"
+            "box3"
+            "box4"
+            "box5"
+            "box6"; /* Chaque boîte prend toute la largeur */
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
     }
 
     .footer-container {
@@ -224,6 +246,7 @@ footer {
 
 /* 📱 Très petits écrans (max 480px) */
 @media screen and (max-width: 480px) {
+    /* Ajuster la taille du texte et des espaces */
     .bg {
         font-size: 0.8rem;
         padding: 5% 5%;
@@ -237,5 +260,14 @@ footer {
         font-size: 0.9rem;
         padding: 8px;
     }
-}
 
+    .container {
+        /* Ajuster les boîtes pour les très petits écrans */
+        gap: 10px; /* Espacement plus petit entre les boîtes */
+    }
+
+    .box {
+        font-size: 16px; /* Réduire la taille du texte dans les boîtes */
+        padding: 20px; /* Réduire les marges internes */
+    }
+}
