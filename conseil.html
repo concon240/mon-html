@@ -90,46 +90,29 @@
         });
     });
     
-    // Fonction pour gérer le sous-menu
+    // Gestion du sous-menu
     document.querySelectorAll(".dropdown > .dropbtn").forEach(btn => {
         btn.addEventListener("click", function (event) {
-            event.preventDefault(); // Empêcher le lien de s’ouvrir immédiatement
+            event.preventDefault(); // Empêcher le lien d’être suivi immédiatement
             let parent = this.parentElement;
-            
-            // Fermer tous les autres dropdowns
+    
+            // Fermer tous les autres sous-menus
             document.querySelectorAll(".dropdown").forEach(drop => {
                 if (drop !== parent) drop.classList.remove("active");
             });
     
-            // Basculer l'affichage du sous-menu
+            // Ouvrir ou fermer le sous-menu
             parent.classList.toggle("active");
         });
     });
     
-    // Fermer le sous-menu si on clique ailleurs
+    // Fermer les sous-menus si on clique ailleurs
     document.addEventListener("click", function (event) {
         if (!event.target.closest(".dropdown")) {
             document.querySelectorAll(".dropdown").forEach(drop => drop.classList.remove("active"));
         }
     });
     </script>
-        function toggleMenu() {
-        document.querySelector("nav ul").classList.toggle("menu-active");
-    }
     
-    // Fonction pour fermer le menu au clic sur un lien
-    function closeMenu() {
-        document.querySelector("nav ul").classList.remove("menu-active");
-    }
-    
-    // Fonction pour activer le sous-menu au clic
-    document.querySelectorAll(".dropbtn").forEach(btn => {
-        btn.addEventListener("click", function (event) {
-            event.preventDefault(); // Empêcher la navigation
-            this.parentElement.classList.toggle("active"); // Ajouter/Retirer la classe active
-        });
-    });
-    </script>    
-
 </body>
 </html>

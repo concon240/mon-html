@@ -26,6 +26,17 @@ header {
     width: 50px;
 }
 
+/* 🌟 Cacher les sous-catégories par défaut */
+nav .dropdown-content {
+    display: none;
+    flex-direction: column;
+    background-color: #d7cdc5;
+    padding: 5px 0;
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
 /* ---- Style général du menu ---- */
 nav ul {
     list-style-type: none;
@@ -350,6 +361,23 @@ footer {
         width: auto;
         background-color: transparent;
         text-align: center;
+    }
+
+    nav .dropdown-content {
+        position: static;
+        width: auto;
+        background-color: transparent;
+        text-align: center;
+    }
+    
+    /* 🔥 Cacher les sous-menus dans le menu burger */
+    nav ul.menu-active .dropdown-content {
+        display: none; /* Les sous-menus restent cachés */
+    }
+    
+    /* 🔥 Afficher le sous-menu uniquement quand "Blog" est cliqué */
+    nav ul.menu-active .dropdown.active .dropdown-content {
+        display: flex;
     }
 }
 
