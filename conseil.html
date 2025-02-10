@@ -9,54 +9,50 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 </head>
 
-<!-- Header -->
+<body>
+
 <header>
     <a href="index.html"><img class="logo" src="logo.webp" alt="Logo"></a>
+    <div class="burger" onclick="toggleMenu()">☰</div>
     <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
+        <ul class="menu">
+            <li><a href="index.html" onclick="closeMenu()">Accueil</a></li>
             <li class="dropdown">
                 <a href="blog.html" class="dropbtn">Blog</a>
                 <ul class="dropdown-content">
-                    <li><a href="amsterdam.html" class="dropbtn">Amsterdam</a></li>
-                    <li><a href="ny.html">New York</a></li>
-                    <li><a href="paris.html">Paris</a></li>
+                    <li><a href="amsterdam.html" onclick="closeMenu()">Amsterdam</a></li>
+                    <li><a href="ny.html" onclick="closeMenu()">New York</a></li>
+                    <li><a href="paris.html" onclick="closeMenu()">Paris</a></li>
                 </ul>
             </li>
-            <li><a href="histoire.html">Histoire</a></li>
-            <li><a href="conseil.html">Bons plans</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="histoire.html" onclick="closeMenu()">Histoire</a></li>
+            <li><a href="conseil.html" onclick="closeMenu()">Bons plans</a></li>
+            <li><a href="contact.html" onclick="closeMenu()">Contact</a></li>
         </ul>
     </nav>
 </header>
 
 <main>
-
     <details>
         <summary class="bg">
             <span><strong>Se déplacer à vélo, pas cher (Amsterdam et autres villes)</strong></span>
             <i class="fa fa-chevron-down"></i>
         </summary>
-        <p>Téléchargez l'application Donkey Republic, disponible sur Android et Iphone <br>
-            <i class="fa fa-arrow-circle-right" aria-hidden="true"></i><a
-                href="https://play.google.com/store/apps/details?id=com.donkeyrepublic.bike.android&pcampaignid=web_share"
+        <p>Téléchargez l'application Donkey Republic, disponible sur Android et iPhone <br>
+            <i class="fa fa-arrow-circle-right"></i> <a href="https://play.google.com/store/apps/details?id=com.donkeyrepublic.bike.android"
                 class="a">Sur Android</a> <br>
-            <i class="fa fa-arrow-circle-right" aria-hidden="true"></i><a
-                href="https://apps.apple.com/us/app/donkey-republic/id933526449" class="a">Sur Iphone</a>
-            </ul>
+            <i class="fa fa-arrow-circle-right"></i> <a href="https://apps.apple.com/us/app/donkey-republic/id933526449"
+                class="a">Sur iPhone</a>
         </p>
     </details>
     <br><br>
-
 </main>
-
 
 <footer>
     <div class="footer-container">
         <div class="footer-about">
             <h3>À propos</h3>
-            <p>Passionné de voyages, nous partageons nos découvertes, conseils et inspirations pour explorer le
-                monde autrement.</p>
+            <p>Passionné de voyages, nous partageons nos découvertes, conseils et inspirations pour explorer le monde autrement.</p>
         </div>
         <div class="footer-links">
             <h3>Liens utiles</h3>
@@ -81,6 +77,59 @@
     </div>
 </footer>
 
-</body>
+<!-- Script pour le menu burger -->
+<script>
+    function toggleMenu() {
+        document.querySelector("nav ul").classList.toggle("menu-active");
+    }
+    
+    // Fermer le menu burger au clic sur un lien
+    document.querySelectorAll("nav a").forEach(link => {
+        link.addEventListener("click", function () {
+            document.querySelector("nav ul").classList.remove("menu-active");
+        });
+    });
+    
+    // Fonction pour gérer le sous-menu
+    document.querySelectorAll(".dropdown > .dropbtn").forEach(btn => {
+        btn.addEventListener("click", function (event) {
+            event.preventDefault(); // Empêcher le lien de s’ouvrir immédiatement
+            let parent = this.parentElement;
+            
+            // Fermer tous les autres dropdowns
+            document.querySelectorAll(".dropdown").forEach(drop => {
+                if (drop !== parent) drop.classList.remove("active");
+            });
+    
+            // Basculer l'affichage du sous-menu
+            parent.classList.toggle("active");
+        });
+    });
+    
+    // Fermer le sous-menu si on clique ailleurs
+    document.addEventListener("click", function (event) {
+        if (!event.target.closest(".dropdown")) {
+            document.querySelectorAll(".dropdown").forEach(drop => drop.classList.remove("active"));
+        }
+    });
+    </script>
+        function toggleMenu() {
+        document.querySelector("nav ul").classList.toggle("menu-active");
+    }
+    
+    // Fonction pour fermer le menu au clic sur un lien
+    function closeMenu() {
+        document.querySelector("nav ul").classList.remove("menu-active");
+    }
+    
+    // Fonction pour activer le sous-menu au clic
+    document.querySelectorAll(".dropbtn").forEach(btn => {
+        btn.addEventListener("click", function (event) {
+            event.preventDefault(); // Empêcher la navigation
+            this.parentElement.classList.toggle("active"); // Ajouter/Retirer la classe active
+        });
+    });
+    </script>    
 
+</body>
 </html>
