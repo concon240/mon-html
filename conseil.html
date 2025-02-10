@@ -83,27 +83,18 @@
         document.querySelector("nav ul").classList.toggle("menu-active");
     }
     
-    // Fermer le menu burger au clic sur un lien
-    document.querySelectorAll("nav a").forEach(link => {
-        link.addEventListener("click", function () {
-            document.querySelector("nav ul").classList.remove("menu-active");
+    // Gestion du sous-menu "Blog"
+    document.querySelector(".dropbtn").addEventListener("click", function (event) {
+        event.preventDefault(); // Empêcher le lien de s'ouvrir immédiatement
+        let parent = this.parentElement;
+    
+        // Fermer tous les autres sous-menus
+        document.querySelectorAll(".dropdown").forEach(drop => {
+            if (drop !== parent) drop.classList.remove("active");
         });
-    });
     
-    // Gestion du sous-menu
-    document.querySelectorAll(".dropdown > .dropbtn").forEach(btn => {
-        btn.addEventListener("click", function (event) {
-            event.preventDefault(); // Empêcher le lien d’être suivi immédiatement
-            let parent = this.parentElement;
-    
-            // Fermer tous les autres sous-menus
-            document.querySelectorAll(".dropdown").forEach(drop => {
-                if (drop !== parent) drop.classList.remove("active");
-            });
-    
-            // Ouvrir ou fermer le sous-menu
-            parent.classList.toggle("active");
-        });
+        // Ouvrir ou fermer le sous-menu
+        parent.classList.toggle("active");
     });
     
     // Fermer les sous-menus si on clique ailleurs
@@ -112,7 +103,7 @@
             document.querySelectorAll(".dropdown").forEach(drop => drop.classList.remove("active"));
         }
     });
-    </script>
+    </script>    
     
 </body>
 </html>

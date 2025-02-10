@@ -14,35 +14,53 @@
 <!-- Header -->
 <header>
     <a href="index.html"><img class="logo" src="logo.webp" alt="Logo"></a>
+    <div class="burger" onclick="toggleMenu()">☰</div>
     <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
+        <ul class="menu">
+            <li><a href="index.html" onclick="closeMenu()">Accueil</a></li>
             <li class="dropdown">
                 <a href="blog.html" class="dropbtn">Blog</a>
                 <ul class="dropdown-content">
-                    <li><a href="amsterdam.html" class="dropbtn">Amsterdam</a></li>
-                    <li><a href="ny.html">New York</a></li>
-                    <li><a href="paris.html">Paris</a></li>
+                    <li><a href="amsterdam.html" onclick="closeMenu()">Amsterdam</a></li>
+                    <li><a href="ny.html" onclick="closeMenu()">New York</a></li>
+                    <li><a href="paris.html" onclick="closeMenu()">Paris</a></li>
                 </ul>
             </li>
-            <li><a href="histoire.html">Histoire</a></li>
-            <li><a href="conseil.html">Bons plans</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="histoire.html" onclick="closeMenu()">Histoire</a></li>
+            <li><a href="conseil.html" onclick="closeMenu()">Bons plans</a></li>
+            <li><a href="contact.html" onclick="closeMenu()">Contact</a></li>
         </ul>
     </nav>
 </header>
 
 <main><br>
-    <style>
-        .decalam {
-            text-align: center;
+    <script>
+        function toggleMenu() {
+            document.querySelector("nav ul").classList.toggle("menu-active");
         }
-      </style>
-      <div class="decalam">
-    <a href="h.am.html"><button class="cta-button">Amsterdam</button></a>  
-    <a href="#"><button class="cta-button">Paris</button></a>
-    <a href="#"><button class="cta-button">New-York</button></a>
-      </div>
+        
+        // Gestion du sous-menu "Blog"
+        document.querySelector(".dropbtn").addEventListener("click", function (event) {
+            event.preventDefault(); // Empêcher le lien de s'ouvrir immédiatement
+            let parent = this.parentElement;
+        
+            // Fermer tous les autres sous-menus
+            document.querySelectorAll(".dropdown").forEach(drop => {
+                if (drop !== parent) drop.classList.remove("active");
+            });
+        
+            // Ouvrir ou fermer le sous-menu
+            parent.classList.toggle("active");
+        });
+        
+        // Fermer les sous-menus si on clique ailleurs
+        document.addEventListener("click", function (event) {
+            if (!event.target.closest(".dropdown")) {
+                document.querySelectorAll(".dropdown").forEach(drop => drop.classList.remove("active"));
+            }
+        });
+        </script>
+        
 </main>
 <br>
     <!-- FOOTER -->

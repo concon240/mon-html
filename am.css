@@ -32,9 +32,6 @@ nav .dropdown-content {
     flex-direction: column;
     background-color: #d7cdc5;
     padding: 5px 0;
-    position: absolute;
-    left: 0;
-    width: 100%;
 }
 
 /* ---- Style général du menu ---- */
@@ -377,7 +374,7 @@ footer {
     
     /* 🔥 Afficher le sous-menu uniquement quand "Blog" est cliqué */
     nav ul.menu-active .dropdown.active .dropdown-content {
-        display: flex;
+        display: block;
     }
 }
 
