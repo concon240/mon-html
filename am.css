@@ -108,6 +108,41 @@ nav a:hover {
     color: #333;
 }
 
+/* ============================= */
+/* 🖼️ SECTION IMAGES */
+/* ============================= */
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+}
+
+.image-container p {
+    text-decoration: underline;
+    background-color: rgb(58, 58, 58);
+    color: white;
+}
+
+.image-box {
+    width: 30%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-box img:hover {
+    transform: scale(1.05);
+}
+
 
 /* ============================= */
 /* 💪 FAQ - Ajustement des espacements */
@@ -115,6 +150,7 @@ nav a:hover {
 
 main {
     margin-left: 5%;
+    margin-right: 5%;
 }
 
 /* Style des blocs FAQ */
